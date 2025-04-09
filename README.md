@@ -56,9 +56,4 @@ Apparirà un menu interattivo con varie opzioni.
 5. Modifica nome/cognome
 6. Esci
 
-🧑‍💻 Autore
-
-Giacomo Visciotti
-Progetto didattico Python
-
 
