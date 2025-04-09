@@ -16,7 +16,7 @@ Questo è un semplice programma in Python che permette di gestire un **registro 
 
 Il registro viene salvato in:
 
-08_aprile_2025/registro.csv
+registro.csv
 
 
 Ogni riga rappresenta un alunno nel formato:
