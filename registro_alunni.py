@@ -7,11 +7,11 @@ def calcola_media(voti):
 def crea_file_csv():
     try:
         # Prova ad aprire il file in lettura per vedere se esiste
-        with open("08_aprile_2025\\registro.csv", "r"):
+        with open("registro.csv", "r"):
             pass
     except:
         # Se il file non esiste, lo crea con intestazione
-        with open("08_aprile_2025\\registro.csv", "w") as file:
+        with open("registro.csv", "w") as file:
             file.write("Nome,Cognome,Voti,Media")
 
 def aggiungi_alunno():
@@ -19,7 +19,7 @@ def aggiungi_alunno():
     nome = input("Nome: ").strip()
     cognome = input("Cognome: ").strip()
     
-    with open("08_aprile_2025\\registro.csv", "r") as file:
+    with open("registro.csv", "r") as file:
         contenuto = file.read()
 
     righe = contenuto.splitlines()
@@ -45,7 +45,7 @@ def aggiungi_alunno():
     voti_str = "-".join([str(v) for v in voti])
     media = calcola_media(voti)
 
-    with open("08_aprile_2025\\registro.csv", "a") as file:
+    with open("registro.csv", "a") as file:
         file.write(f"\n{nome},{cognome},{voti_str},{media}")
     print("Alunno aggiunto!\n")
         
@@ -53,7 +53,7 @@ def aggiungi_alunno():
 
 def mostra_alunni():
     try:
-        with open("08_aprile_2025\\registro.csv", "r") as file:
+        with open("registro.csv", "r") as file:
             righe = file.read()
         righe_lista = righe.split("\n")
         if len(righe_lista) <= 1:
@@ -71,7 +71,7 @@ def modifica_alunno():
     trovato = False
     nuove_righe = []
 
-    with open("08_aprile_2025\\registro.csv", "r") as file:
+    with open("registro.csv", "r") as file:
         contenuto = file.read()
     
     righe = contenuto.splitlines()
@@ -94,7 +94,7 @@ def modifica_alunno():
             nuove_righe.append(riga)
         
     if trovato:
-        with open("08_aprile_2025\\registro.csv", "w") as file:
+        with open("registro.csv", "w") as file:
             file.write("\n".join(nuove_righe))
         print("Alunno modificato!\n")
     else:
@@ -106,7 +106,7 @@ def elimina_alunno():
     trovato = False
     nuove_righe = []
 
-    with open("08_aprile_2025\\registro.csv", "r") as file:
+    with open("registro.csv", "r") as file:
         righe = file.read().splitlines()
 
     for riga in righe:
@@ -118,7 +118,7 @@ def elimina_alunno():
         nuove_righe.append(riga)
 
     if trovato:
-        with open("08_aprile_2025\\registro.csv", "w") as file:
+        with open("registro.csv", "w") as file:
             file.write("\n".join(nuove_righe))
     else:
         print("Alunno non trovato.\n")
@@ -129,7 +129,7 @@ def modifica_nomi_alunno():
     trovato = False
     nuove_righe = []
 
-    with open("08_aprile_2025\\registro.csv", "r") as file:
+    with open("registro.csv", "r") as file:
         righe = file.read().splitlines()
 
     for riga in righe:
@@ -145,7 +145,7 @@ def modifica_nomi_alunno():
             nuove_righe.append(riga)
    
     if trovato:
-        with open("08_aprile_2025\\registro.csv", "w") as file:
+        with open("registro.csv", "w") as file:
             file.write("\n".join(nuove_righe))
     else:
         print("Alunno non trovato.\n")
